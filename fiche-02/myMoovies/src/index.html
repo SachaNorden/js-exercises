@@ -6,34 +6,33 @@
     <title>Your page title</title>
     <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
   </head>
-  <body>
-    <header>
-      
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Pizza_spinoza</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-            </ul>
-          </div>
+<body>
+  <header>  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pizza_spinoza</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
+  <main>
     <div class="center"><h1>Pizza Spinoza</h1></div>
     <div class="container">
-      
       <div class="row">
         <div class="col">
           <h4 class="center">Les pizzas c'est la vie</h4>
@@ -43,26 +42,26 @@
           <h4 class="center">et c'est mieux avec spinoza</h4>
           <img id="spinoza" class="img-thumbnail">
         </div>
-    <footer></footer>
-  </div>
-  <form name="form"></form>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="inputGroup-sizing-default">Number of lines</span>
-      <input name="lines" class="form-control" placeholder="Enter number of lines" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+      </div>
+      <form name="form" >
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Number of lines</span>
+          <input name="lines" class="form-control" placeholder="Enter number of lines" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Number of columns</span>
+          <input name="column" class="form-control" placeholder="Enter number of columns" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Initial String</span>
+          <input name="string" class="form-control" placeholder="Init string" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" name="submit" value="submit">Create table</button>
+        </div>
+      </form>
     </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="inputGroup-sizing-default">Number of columns</span>
-      <input name="column" class="form-control" placeholder="Enter number of columns" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="inputGroup-sizing-default">Initial String</span>
-      <input name="string" class="form-control" placeholder="Init string" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit" name="table" value="add">Create table</button>
-    </div>
-  </form>
-  </body>
+  </main>
+</body>
 <script src="index.js"></script>
-
 </html>
