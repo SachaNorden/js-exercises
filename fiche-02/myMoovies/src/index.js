@@ -28,9 +28,10 @@ function table(e){
     }
     let main =document.querySelector("main");
     let table =document.createElement("table");
+    //let br =document.createElement("br");
     main.appendChild(table);
-    table.setAttribute('class','border border-secondary');
-
+    table.setAttribute('class','border border-secondary mt-5');
+    
     for(let i=0;i<lines;i++){
         let listRow = document.createElement("tr");
         for(let j=0;j<column;j++){
@@ -42,4 +43,7 @@ function table(e){
         }
         table.appendChild(listRow);
     }
+}
+function array(e){
+    
 }
