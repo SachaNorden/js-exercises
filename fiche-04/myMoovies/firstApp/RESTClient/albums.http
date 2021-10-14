@@ -1,0 +1,12 @@
+### Read all albums
+GET http://localhost:3000/albums
+
+### add an albums
+POST http://localhost:3000/albums
+Content-Type: application/json
+
+{
+    "title": "random days",
+    "artist":"Mika",
+    "year": 2000
+}
