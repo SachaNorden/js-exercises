@@ -4,10 +4,10 @@
 GET http://localhost:3000/films
 
 ### Read pizza identified by 2
-GET http://localhost:3000/pizzas/2
+GET http://localhost:3000/films/2
 
 ### Create a pizza
-POST http://localhost:3000/pizzas
+POST http://localhost:3000/films
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Update the pizza identified by 2
-PUT http://localhost:3000/pizzas/2
+PUT http://localhost:3000/film/2
 Content-Type: application/json
 
 {
@@ -24,16 +24,16 @@ Content-Type: application/json
 }
 
 ### Delete pizza identified by 2
-DELETE http://localhost:3000/pizzas/2
+DELETE http://localhost:3000/films/2
 
 
 ######### ERROR OPERATION  ###########
 
 ### Read pizza which does not exists
-GET http://localhost:3000/pizzas/100
+GET http://localhost:3000/films/100
 
 ### Create a pizza without info for a property
-POST http://localhost:3000/pizzas
+POST http://localhost:3000/films
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ### Update for a pizza which does not exist
-PUT http://localhost:3000/pizzas/200
+PUT http://localhost:3000/films/200
 Content-Type: application/json
 
 {
@@ -50,7 +50,7 @@ Content-Type: application/json
 }
 
 ### Update for a pizza which does not provide any info for a property
-PUT http://localhost:3000/pizzas/1
+PUT http://localhost:3000/films/1
 Content-Type: application/json
 
 {
