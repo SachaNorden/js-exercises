@@ -3,4 +3,6 @@
 ### Read all pizzas
 GET http://localhost:3000/films
 
+
 ### Read pizza identified by 2
+GET http://localhost:3000/films/2

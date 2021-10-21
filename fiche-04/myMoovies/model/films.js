@@ -32,6 +32,42 @@ class Films{
         this.jsonDbPath=dbPath;
         this.defaultFilms=defaultItems;
     }
+    /**
+   * Returns all pizzas
+   * @returns {Array} Array of pizzas
+   */
+  getAll() {
+    const films = parse(this.jsonDbPath, this.defaultFilms);
+    return films;
+  }
+    /**
+   * Returns the pizza identified by id
+   * @param {number} id - id of the pizza to find
+   * @returns {object} the pizza found or undefined if the id does not lead to a pizza
+   */
+  getOne(id) {
+    const films = parse(this.jsonDbPath, this.defaultFilms);
+    const foundIndex = films.findIndex((film) => film.id == id);
+    if (foundIndex < 0) return;
+
+    return films[foundIndex];
+  }
+  
+  addOne(body) {
+    const films = parse(this.jsonDbPath, this.defaultFilms);
+
+    // add new films
+    const newFilm = {
+      id: this.getNextId(),
+      title: body.title,
+      duration: body.duration,
+      budget: body.budget,
+      link: body.link,
+    };
+    films.push(newFilm);
+    serialize(this.jsonDbPath, films);
+    return newFilm;
+  }
     
 }
 module.exports = { Films };
