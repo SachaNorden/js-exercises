@@ -32,6 +32,14 @@ class Films{
         this.jsonDbPath=dbPath;
         this.defaultFilms=defaultItems;
     }
+    getNextId() {
+      const films = parse(this.jsonDbPath, this.defaultFilms);
+      let nextId;
+      if (films.length === 0) nextId = 1;
+      else nextId = films[films.length - 1].id + 1;
+  
+      return nextId;
+    }
     /**
    * Returns all pizzas
    * @returns {Array} Array of pizzas

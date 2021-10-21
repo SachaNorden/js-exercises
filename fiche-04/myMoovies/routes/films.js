@@ -23,9 +23,20 @@ router.get("/:id", function (req, res) {
 //POST /films : get a films 
 router.post("/",function(req,res){
 
-  console.log(`POST/films/${req.params.id}`);
+  console.log(`POST/films/`);
+  if (
+    !req.body ||
+    (req.body.hasOwnProperty("title") && req.body.title.length === 0) ||
+    ((req.body.hasOwnProperty("content") && req.body.content.length === 0))||
+    (req.body.duration <=60)||
+    (req.body.budget<=10000)||
+    (req.body.hasOwnProperty("link")&& req.body.link.length===0)
+
+  )
+  return res.status(400).end();
 
   const films =filmsModel.addOne(req.body);
+  return res.json(films);
 })
 
 module.exports = router;
