@@ -20,9 +20,9 @@ router.get("/:id", function (req, res) {
   return res.json(films);
 });
 
+
 //POST /films : get a films 
 router.post("/",function(req,res){
-
   console.log(`POST/films/`);
   if (
     !req.body ||
@@ -39,4 +39,15 @@ router.post("/",function(req,res){
   return res.json(films);
 })
 
+
+//POST /films : get a films 
+router.delete("/:id",function(req,res){
+  console.log(`DELETE /films/${req.params.id}`); 
+
+
+  const film = filmsModel.deleteOne(req.params.id);
+  // Send an error code '404 Not Found' if the film was not found
+  if (!film) return res.status(404).end();
+  return res.json(film);
+})
 module.exports = router;

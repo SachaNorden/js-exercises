@@ -41,17 +41,17 @@ class Films{
       return nextId;
     }
     /**
-   * Returns all pizzas
-   * @returns {Array} Array of pizzas
+   * Returns all films
+   * @returns {Array} Array of films
    */
   getAll() {
     const films = parse(this.jsonDbPath, this.defaultFilms);
     return films;
   }
     /**
-   * Returns the pizza identified by id
-   * @param {number} id - id of the pizza to find
-   * @returns {object} the pizza found or undefined if the id does not lead to a pizza
+   * Returns the films identified by id
+   * @param {number} id - id of the film to find
+   * @returns {object} the film found or undefined if the id does not lead to a film
    */
   getOne(id) {
     const films = parse(this.jsonDbPath, this.defaultFilms);
@@ -76,6 +76,21 @@ class Films{
     serialize(this.jsonDbPath, films);
     return newFilm;
   }
+
+    /**
+   * Delete a films in the DB and return the deleted films
+   * @param {number} id - id of the film to be deleted
+   * @returns {object} the film that was deleted or undefined if the delete operation failed
+   */
+     deleteOne(id) {
+      const films = parse(this.jsonDbPath, this.defaultFilms);
+      const foundIndex = films.findIndex((film) => film.id == id);
+      if (foundIndex < 0) return;
+      const itemRemoved = films.splice(foundIndex, 1);
+      serialize(this.jsonDbPath, films);
+  
+      return itemRemoved[0];
+    }
     
 }
 module.exports = { Films };

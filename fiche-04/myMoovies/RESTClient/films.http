@@ -4,7 +4,7 @@
 GET http://localhost:3000/films
 
 
-### Read pizza identified by 2
+### Read films identified by 2
 GET http://localhost:3000/films/2
 ### Create a pizza
 POST http://localhost:3000/films
@@ -17,3 +17,5 @@ Content-Type: application/json
     "budget":1200000,
     "link":"taRace.fr"
 }
+### delete films identified by 1
+DELETE http://localhost:3000/films/1
