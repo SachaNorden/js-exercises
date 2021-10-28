@@ -40,14 +40,38 @@ router.post("/",function(req,res){
 })
 
 
-//POST /films : get a films 
+//DELETE /films : delete a films 
 router.delete("/:id",function(req,res){
-  console.log(`DELETE /films/${req.params.id}`); 
+  console.log(`DELETE/films/${req.params.id}`); 
 
 
   const film = filmsModel.deleteOne(req.params.id);
   // Send an error code '404 Not Found' if the film was not found
   if (!film) return res.status(404).end();
   return res.json(film);
+})
+
+
+//PUT /films : PUT a film
+router.put("/:id",function(req,res){
+  console.log(`PUT/films/${req.params.id}`); 
+
+  // Send an error code '400 bad request' bad request
+  if (!req.body) return res.status(400).end();
+  console.log("1");
+  if (req.body.id !== parseInt(req.params.id)) return res.status(400).end();
+  console.log("2");
+  if (!req.body.title) return res.status(400).end();
+  console.log("3");
+  if (!req.body.link) return res.status(400).end();
+  console.log("4");
+  if (!req.body.duration) return res.status(400).end();
+  
+
+  const film = filmsModel.putOne(req.params.id, req.body);
+  // Send an error code '404 Not Found' if the film was not found
+  if (!film) return res.status(404).end();
+
+  return res.json(film)
 })
 module.exports = router;

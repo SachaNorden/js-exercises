@@ -5,7 +5,7 @@ GET http://localhost:3000/films
 
 
 ### Read films identified by 2
-GET http://localhost:3000/films/2
+GET http://localhost:3000/films/1
 ### Create a pizza
 POST http://localhost:3000/films
 Content-Type: application/json
@@ -19,3 +19,17 @@ Content-Type: application/json
 }
 ### delete films identified by 1
 DELETE http://localhost:3000/films/1
+### update a films
+
+PUT http://localhost:3000/films/2
+Content-Type: application/json
+
+{
+    "id":2,
+    "title":"batman",
+    "content":"chauve souris dans le noir",
+    "duration":164,
+    "budget":48200,
+    "link":"batman.fr"
+}
+

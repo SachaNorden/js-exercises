@@ -91,6 +91,21 @@ class Films{
   
       return itemRemoved[0];
     }
+    putOne(id,body){
+      console.log(id);
+      const films = parse(this.jsonDbPath, this.defaultFilms);
+      const foundIndex = films.findIndex((film) => film.id == id);
+      console.log(foundIndex);
+      if (foundIndex < 0) return;
+      // create a new object based on the existing film - prior to modification -
+      // and the properties requested to be updated (those in the body of the request)
+      // use of the spread operator to create a shallow copy and repl
+      const updatedFilms = { ...films[foundIndex], ...body };
+      // replace the pizza found at index : (or use splice)
+      films[foundIndex] = updatedFilms;
+      serialize(this.jsonDbPath, films);
+      return updatedFilms;
+    }
     
 }
 module.exports = { Films };
