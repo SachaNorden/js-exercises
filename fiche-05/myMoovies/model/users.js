@@ -47,6 +47,20 @@ class Users{
     if (foundIndex < 0) return;
     return users[foundIndex];
   }
+
+  /**
+   * Returns the item identified by username
+   * @param {string} username - username of the item to find
+   * @returns {object} the item found or undefined if the username does not lead to a item
+   */
+   getOneByUsername(username) {
+    const items = parse(this.jsonDbPath, this.defaultItems);
+    const foundIndex = items.findIndex((item) => item.username == username);
+    if (foundIndex < 0) return;
+
+    return items[foundIndex];
+  }
+
   addOne(body){
       const users = parse (this.jsonDbPath,this.defaultItems);
       //add a new user 
@@ -61,7 +75,23 @@ class Users{
   }
 
 login(username,password){
-    const userFound=this.getOn
+    const userFound=this.getOneByUsername(username);
+    if(!userFound)return;
+    if(userFound.password!== password)return;
+
+    const authenticatedUser = {
+      username: username,
+      token: "Future signed token",
+    };
+    // replace expected token with JWT : create a JWT
+    const token = jwt.sign(
+      { username: authenticatedUser.username }, // session data in the payload
+      jwtSecret, // secret used for the signature
+      { expiresIn: LIFETIME_JWT } // lifetime of the JWT
+    );
+
+    authenticatedUser.token = token;
+    return authenticatedUser;
 }
 }
 module.exports = { Users };
