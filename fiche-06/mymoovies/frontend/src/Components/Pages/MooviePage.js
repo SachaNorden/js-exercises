@@ -62,7 +62,20 @@ const MooviePage = () => {
   const myForm = document.querySelector("form");
   const printMoovies = document.querySelector("#printMoovies");
   printMoovies.innerHTML = myFilmLibrary.getHtmlTable();
-
+  var addFilm={
+      method: 'POST',
+      body:JSON.stringify({
+        title: title.value,
+        link: link.value,
+        duration: duration.value,
+        budget: budget.value
+      }),
+    headers: {
+    "Content-Type": "application/json",
+    },               
+  };
+  fetch("/api/films",)
+    .then();
   myForm.addEventListener("submit", (event) => {
     event.preventDefault();
     let newFilm = new Film(
