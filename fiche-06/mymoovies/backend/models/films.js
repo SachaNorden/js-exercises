@@ -55,7 +55,7 @@ class Films {
 
   addOne(body) {
     const collection = parse(this.jsonDbPath, this.collection);
-
+    console.log("add 1");
     // add new resource
     const newResource = {
       id: this.getNextId(),

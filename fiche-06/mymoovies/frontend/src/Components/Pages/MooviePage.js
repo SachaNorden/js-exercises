@@ -74,8 +74,7 @@ const MooviePage = () => {
     "Content-Type": "application/json",
     },               
   };
-  fetch("/api/films",)
-    .then();
+  
   myForm.addEventListener("submit", (event) => {
     event.preventDefault();
     let newFilm = new Film(
